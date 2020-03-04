@@ -1,0 +1,7 @@
+#!/bin/bash
+composer outdated drupal/* # show upgrade status
+echo -n Press Enter
+read
+composer update drupal/core drupal/* webflo/drupal-core-require-dev --with-dependencies
+drush9 updatedb
+drush9 cr # clear caches
